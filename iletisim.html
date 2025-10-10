@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Fırat Nakliyat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header buraya components.js tarafından yüklenecek -->
+
+    <!-- Ana İçerik -->
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1 style="color: white !important;">İLETİŞİM</h1>
+                <p class="contact-subtitle" style="color: white !important;">Güvenli taşımacılık için bizimle iletişime geçin</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-content">
+            <div class="container">
+                <!-- İletişim Tanıtım -->
+                <div class="contact-intro">
+                    <h2>Bize Ulaşın</h2>
+                    <p>Evden eve, ofis taşımacılığı veya şehirlerarası nakliyat ihtiyaçlarınız için bizimle iletişime geçin. Profesyonel ekibimiz size en uygun çözümü sunmak için hazır.</p>
+                </div>
+
+                <!-- Ana Grid Yapısı -->
+                <div class="contact-main-grid">
+                    <!-- Sol Kolon: İletişim Bilgileri ve Harita -->
+                    <div class="contact-left-section">
+                        <!-- İletişim Kartları -->
+                        <div class="contact-cards">
+                            <!-- Telefon Kartı - Emre Görgülü -->
+                            <div class="contact-info-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Emre Görgülü</h3>
+                                    <a href="tel:+905343816419" class="contact-link">0534 381 64 19</a>
+                                    <p class="card-description">7/24 Müşteri Hizmetleri</p>
+                                </div>
+                            </div>
+
+                            <!-- Telefon Kartı - Yusuf Görgülü -->
+                            <div class="contact-info-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Yusuf Görgülü</h3>
+                                    <a href="tel:+905380634249" class="contact-link">0538 063 42 49</a>
+                                    <p class="card-description">7/24 Müşteri Hizmetleri</p>
+                                </div>
+                            </div>
+
+                            <!-- Adres Kartı -->
+                            <div class="contact-info-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Adres</h3>
+                                    <p class="contact-link">Taksim, İstanbul, Türkiye</p>
+                                    <p class="card-description">Merkez Ofis</p>
+                                </div>
+                            </div>
+
+                            <!-- Çalışma Saatleri Kartı -->
+                            <div class="contact-info-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Çalışma Saatleri</h3>
+                                    <p class="contact-link">Pazartesi - Pazar</p>
+                                    <p class="card-description">07:00 - 22:00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Maps -->
+                        <div class="map-container">
+                            <h3><i class="fas fa-map-marked-alt"></i> Konum</h3>
+                            <div class="google-map">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.7584586722847!2d28.97794831541842!3d41.01127797930123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd6570f4e1%3A0xe8c5c39dcd84b5!2zVGFrc2ltLCDEsXN0YW5idWw!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Kolon: İletişim Formu -->
+                    <div class="contact-form-section">
+                        <div class="contact-form-container">
+                            <div class="form-header">
+                                <h3><i class="fas fa-paper-plane"></i> Hızlı Teklif Alın</h3>
+                                <p>Formu doldurarak ücretsiz fiyat teklifi alabilirsiniz. En kısa sürede size dönüş yapacağız.</p>
+                            </div>
+                            
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName"><i class="fas fa-user"></i> Ad</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                        <span class="form-error"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName"><i class="fas fa-user"></i> Soyad</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                        <span class="form-error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone"><i class="fas fa-phone"></i> Telefon</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="0555 123 45 67" required>
+                                    <span class="form-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="serviceType"><i class="fas fa-truck"></i> Hizmet Türü</label>
+                                    <select id="serviceType" name="serviceType" required>
+                                        <option value="">Seçiniz</option>
+                                        <option value="evden-eve">Evden Eve Nakliyat</option>
+                                        <option value="ofis">Ofis Taşımacılığı</option>
+                                        <option value="sehirlerarasi">Şehirlerarası Nakliyat</option>
+                                        <option value="depolama">Eşya Depolama</option>
+                                        <option value="other">Diğer</option>
+                                    </select>
+                                    <span class="form-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message"><i class="fas fa-comment-dots"></i> Mesajınız</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Taşınma detaylarınızı, adresinizi veya özel taleplerinizi yazınız..." required></textarea>
+                                    <span class="form-error"></span>
+                                </div>
+
+                                <div class="form-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="agreement" name="agreement" required>
+                                        <span class="checkmark"></span>
+                                        <a href="#" class="privacy-link">KVKK</a> kapsamında kişisel verilerimin işlenmesini kabul ediyorum.
+                                    </label>
+                                    <span class="form-error"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-submit">
+                                    <span class="btn-text"><i class="fas fa-paper-plane"></i> Gönder</span>
+                                    <span class="btn-loading" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Gönderiliyor...</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İstatistikler Bölümü -->
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-truck-moving"></i></div>
+                            <div class="stat-number" data-target="1000">0</div>
+                            <div class="stat-label">Başarılı Taşıma</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">% Müşteri Memnuniyeti</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-headset"></i></div>
+                            <div class="stat-number" data-target="24">0</div>
+                            <div class="stat-label">Saat Destek</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="stat-number" data-target="20">0</div>
+                            <div class="stat-label">Yıllık Deneyim</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Floating Button - Emre Görgülü -->
+        <a href="https://wa.me/905343816419" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">WhatsApp'tan Yaz</span>
+        </a>
+    </main>
+
+    <!-- Footer buraya components.js tarafından yüklenecek -->
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/contact-stats.js"></script>
+</body>
+</html>

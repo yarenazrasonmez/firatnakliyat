@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Galerisi - Fırat Nakliyat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galeri.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header buraya components.js tarafından yüklenecek -->
+
+    <!-- Ana İçerik -->
+    <main>
+        <!-- Hero Section -->
+        <section class="gallery-hero">
+            <div class="container">
+                <h1>FOTO GALERİSİ</h1>
+                <p class="gallery-subtitle">Çalışmalarımızdan Görüntüler</p>
+            </div>
+        </section>
+
+        <!-- Gallery Content -->
+        <section class="gallery-content">
+            <div class="container">
+                <!-- Galeri Tanıtım -->
+                <div class="gallery-intro">
+                    <h2>Profesyonel Nakliyat Hizmetlerimiz</h2>
+                    <p>Yılların deneyimi ve modern ekipmanlarımızla gerçekleştirdiğimiz başarılı nakliyat projelerinden kareler. Her bir fotoğraf, kaliteli hizmet anlayışımızın ve müşteri memnuniyetine verdiğimiz önemin bir kanıtıdır.</p>
+                </div>
+
+                <!-- Ana Galeri Slider - Sadece Resimler -->
+                <div class="main-gallery-slider">
+                    <button class="slider-btn slider-btn-prev" aria-label="Önceki">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="slider-wrapper">
+                        <div class="gallery-slide active">
+                            <img src="images/R1.png" alt="Nakliyat Çalışması 1">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/R2.jpg" alt="Nakliyat Çalışması 2">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/R3.jpg" alt="Nakliyat Çalışması 3">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/R4.jpg" alt="Nakliyat Çalışması 4">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/R5.jpg" alt="Nakliyat Çalışması 5">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/R6.jpg" alt="Nakliyat Çalışması 6">
+                        </div>
+                    </div>
+
+                    <button class="slider-btn slider-btn-next" aria-label="Sonraki">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <!-- Slider Indicators -->
+                    <div class="slider-indicators">
+                        <button class="indicator active" data-slide="0"></button>
+                        <button class="indicator" data-slide="1"></button>
+                        <button class="indicator" data-slide="2"></button>
+                        <button class="indicator" data-slide="3"></button>
+                        <button class="indicator" data-slide="4"></button>
+                        <button class="indicator" data-slide="5"></button>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="gallery-cta">
+                    <h2>Siz de Profesyonel Hizmetimizden Yararlanın</h2>
+                    <p>Eşyalarınızı güvenle taşımak için bizimle iletişime geçin</p>
+                    <div class="cta-buttons">
+                        <a href="iletisim.html" class="btn btn-primary">Hemen Teklif Alın</a>
+                        <a href="hizmetlerimiz.html" class="btn btn-secondary">Hizmetlerimiz</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer buraya components.js tarafından yüklenecek -->
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/galeri.js"></script>
+</body>
+</html>

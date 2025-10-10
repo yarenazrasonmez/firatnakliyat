@@ -1,0 +1,45 @@
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Log dosyaları
+*.log
+npm-debug.log*
+
+# Geçici dosyalar
+*.tmp
+*.temp
+
+# Node modules (eğer gelecekte kullanılırsa)
+node_modules/
+
+# Build dosyaları
+dist/
+build/
+
+# Environment dosyaları
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache dosyaları
+.cache/
+*.cache
+
+# Backup dosyaları
+*.bak
+*.backup
+
+# OS generated files
+*.DS_Store?
+ehthumbs.db
+Icon?
