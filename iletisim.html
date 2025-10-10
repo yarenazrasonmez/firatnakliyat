@@ -30,9 +30,8 @@
                     <p>Evden eve, ofis taşımacılığı veya şehirlerarası nakliyat ihtiyaçlarınız için bizimle iletişime geçin. Profesyonel ekibimiz size en uygun çözümü sunmak için hazır.</p>
                 </div>
 
-                <!-- Ana Grid Yapısı -->
+                <!-- İletişim Bilgileri ve Harita - Ortalanmış -->
                 <div class="contact-main-grid">
-                    <!-- Sol Kolon: İletişim Bilgileri ve Harita -->
                     <div class="contact-left-section">
                         <!-- İletişim Kartları -->
                         <div class="contact-cards">
@@ -101,70 +100,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Sağ Kolon: İletişim Formu -->
-                    <div class="contact-form-section">
-                        <div class="contact-form-container">
-                            <div class="form-header">
-                                <h3><i class="fas fa-paper-plane"></i> Hızlı Teklif Alın</h3>
-                                <p>Formu doldurarak ücretsiz fiyat teklifi alabilirsiniz. En kısa sürede size dönüş yapacağız.</p>
-                            </div>
-                            
-                            <form id="contactForm" class="contact-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="firstName"><i class="fas fa-user"></i> Ad</label>
-                                        <input type="text" id="firstName" name="firstName" required>
-                                        <span class="form-error"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lastName"><i class="fas fa-user"></i> Soyad</label>
-                                        <input type="text" id="lastName" name="lastName" required>
-                                        <span class="form-error"></span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="phone"><i class="fas fa-phone"></i> Telefon</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="0555 123 45 67" required>
-                                    <span class="form-error"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="serviceType"><i class="fas fa-truck"></i> Hizmet Türü</label>
-                                    <select id="serviceType" name="serviceType" required>
-                                        <option value="">Seçiniz</option>
-                                        <option value="evden-eve">Evden Eve Nakliyat</option>
-                                        <option value="ofis">Ofis Taşımacılığı</option>
-                                        <option value="sehirlerarasi">Şehirlerarası Nakliyat</option>
-                                        <option value="depolama">Eşya Depolama</option>
-                                        <option value="other">Diğer</option>
-                                    </select>
-                                    <span class="form-error"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message"><i class="fas fa-comment-dots"></i> Mesajınız</label>
-                                    <textarea id="message" name="message" rows="5" placeholder="Taşınma detaylarınızı, adresinizi veya özel taleplerinizi yazınız..." required></textarea>
-                                    <span class="form-error"></span>
-                                </div>
-
-                                <div class="form-group checkbox-group">
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" id="agreement" name="agreement" required>
-                                        <span class="checkmark"></span>
-                                        <a href="#" class="privacy-link">KVKK</a> kapsamında kişisel verilerimin işlenmesini kabul ediyorum.
-                                    </label>
-                                    <span class="form-error"></span>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary btn-submit">
-                                    <span class="btn-text"><i class="fas fa-paper-plane"></i> Gönder</span>
-                                    <span class="btn-loading" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Gönderiliyor...</span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- İstatistikler Bölümü -->
@@ -206,7 +141,6 @@
 
     <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/contact-form.js"></script>
     <script src="js/contact-stats.js"></script>
 </body>
 </html>
