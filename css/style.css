@@ -697,10 +697,10 @@ footer p {
         width: 8px;
         height: 1px;
     }
-}/* FIRAT Nakliyat Logo ve Header Stilleri */
+}/* FIRAT Nakliyat Logo Signature Style */
 
 .logo-svg {
-    width: 160px;
+    width: 300px;
     height: auto;
     display: block;
     flex-shrink: 0;
@@ -714,10 +714,18 @@ footer p {
     filter: drop-shadow(0 8px 16px rgba(96, 165, 250, 0.6));
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 0;
     padding: 8px 16px;
     border-radius: 50px;
     background: transparent !important;
@@ -738,34 +746,6 @@ footer p {
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    line-height: 1;
-}
-
-.brand-name {
-    font-size: 1.5rem !important;
-    font-weight: 900 !important;
-    background: linear-gradient(90deg, #60a5fa, #1e40af) !important;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0 !important;
-    letter-spacing: -0.5px;
-}
-
-.brand-subtitle {
-    color: #cbd5e1 !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 2px 0 0 0 !important;
-    font-size: 0.7rem;
-}
-
 @keyframes logoFloat {
     0%, 100% {
         transform: translateY(0px);
@@ -778,42 +758,24 @@ footer p {
 /* Responsive */
 @media (max-width: 768px) {
     .logo-svg {
-        width: 130px;
+        width: 240px;
     }
 
     .logo-wrapper {
-        gap: 12px;
+        gap: 0;
         padding: 6px 12px;
         border-radius: 40px;
-    }
-
-    .brand-name {
-        font-size: 1.3rem !important;
-    }
-
-    .brand-subtitle {
-        font-size: 0.6rem;
-        letter-spacing: 1px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-svg {
-        width: 100px;
+        width: 180px;
     }
 
     .logo-wrapper {
-        gap: 10px;
+        gap: 0;
         padding: 4px 10px;
         border-radius: 30px;
-    }
-
-    .brand-name {
-        font-size: 1.1rem !important;
-    }
-
-    .brand-subtitle {
-        font-size: 0.55rem;
-        letter-spacing: 1px;
     }
 }
