@@ -47,53 +47,103 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(29, 78, 216, 0.05) 100%);
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.logo:hover .logo-container {
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(29, 78, 216, 0.1) 100%);
 }
 
 .logo-icon {
-    font-size: 2.5rem;
-    animation: truck-move 2s ease-in-out infinite;
-    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+    font-size: 2.8rem;
+    animation: truck-move 3s ease-in-out infinite;
+    filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.4));
+    margin-right: 15px;
+    position: relative;
+    z-index: 2;
 }
 
-.logo-text {
+.logo-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
 }
 
 .company-name {
-    font-size: 1.8rem;
-    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+    font-weight: 900;
+    text-shadow: 0 2px 8px rgba(15, 23, 42, 0.3);
+}
+
+.logo-text-part-1 {
+    font-size: 1.9rem;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.logo-text-part-2 {
+    font-size: 1.9rem;
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1;
-    text-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-top: -5px;
 }
 
 .tagline {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #cbd5e1;
-    margin-top: 2px;
-    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-top: 4px;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    opacity: 0.9;
+    position: relative;
+    left: 2px;
 }
 
 @keyframes truck-move {
     0%, 100% {
-        transform: translateX(0px);
+        transform: translateX(0px) rotateY(0deg);
+    }
+    25% {
+        transform: translateX(2px) rotateY(5deg);
     }
     50% {
-        transform: translateX(3px);
+        transform: translateX(4px) rotateY(0deg);
+    }
+    75% {
+        transform: translateX(2px) rotateY(-5deg);
     }
 }
 
@@ -560,20 +610,23 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .logo {
-        gap: 8px;
+    .logo-container {
+        padding: 8px 15px;
+        border-radius: 15px;
     }
 
     .logo-icon {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-right: 12px;
     }
 
-    .company-name {
-        font-size: 1.4rem;
+    .logo-text-part-1,
+    .logo-text-part-2 {
+        font-size: 1.5rem;
     }
 
     .tagline {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
     nav {
@@ -587,5 +640,26 @@ footer p {
     .nav-links a {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        padding: 6px 12px;
+        border-radius: 12px;
+    }
+
+    .logo-icon {
+        font-size: 1.8rem;
+        margin-right: 10px;
+    }
+
+    .logo-text-part-1,
+    .logo-text-part-2 {
+        font-size: 1.2rem;
+    }
+
+    .tagline {
+        font-size: 0.6rem;
     }
 }
