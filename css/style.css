@@ -1,58 +1,46 @@
-/* Responsive Design */
-@media (max-width: 768px) {
-    .logo-container {
-        padding: 8px 15px;
-        border-radius: 15px;
-    }
-
-    .logo-icon {
-        font-size: 2.2rem;
-        margin-right: 12px;
-    }
-
-    .logo-text-part-1,
-    .logo-text-part-2 {
-        font-size: 1.5rem;
-    }
-
-    .tagline {
-        font-size: 0.65rem;
-    }
-
-    nav {
-        padding: 0 15px;
-    }
-
-    .nav-links {
-        gap: 1.5rem;
-    }
-
-    .nav-links a {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
+/* Genel Reset ve Temel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
-    .logo-container {
-        padding: 6px 12px;
-        border-radius: 12px;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .logo-icon {
-        font-size: 1.8rem;
-        margin-right: 10px;
-    }
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+}
 
-    .logo-text-part-1,
-    .logo-text-part-2 {
-        font-size: 1.2rem;
-    }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    .tagline {
-        font-size: 0.6rem;
-    }
-}   margin: 0 auto;
+/* Header ve Navigasyon */
+header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
@@ -60,102 +48,125 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     position: relative;
 }
 
-.logo:hover {
-    transform: scale(1.02);
-}
-
-.logo-container {
+.logo-wrapper {
     display: flex;
     align-items: center;
+    gap: 16px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(29, 78, 216, 0.05) 100%);
-    padding: 12px 20px;
-    border-radius: 20px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
+    overflow: hidden;
 }
 
-.logo:hover .logo-container {
-    border: 2px solid rgba(59, 130, 246, 0.3);
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(29, 78, 216, 0.1) 100%);
+.logo:hover .logo-wrapper {
+    transform: scale(1.05) translateY(-2px);
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.15), rgba(29, 78, 216, 0.1));
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 
+        0 20px 60px rgba(59, 130, 246, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.logo-icon {
-    font-size: 2.8rem;
-    animation: truck-move 3s ease-in-out infinite;
-    filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.4));
-    margin-right: 15px;
+.truck-svg-icon {
+    width: 50px;
+    height: 30px;
     position: relative;
     z-index: 2;
 }
 
-.logo-text-container {
+.truck-svg {
+    width: 100%;
+    height: 100%;
+    animation: truckDrive 4s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+}
+
+.logo-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
 }
 
-.company-name {
-    display: flex;
-    flex-direction: column;
-    line-height: 0.85;
+.brand-name {
+    font-size: 1.6rem;
     font-weight: 900;
-    text-shadow: 0 2px 8px rgba(15, 23, 42, 0.3);
-}
-
-.logo-text-part-1 {
-    font-size: 1.9rem;
-    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #3b82f6 100%);
+    margin: 0;
+    line-height: 1;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 900;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-text-part-2 {
-    font-size: 1.9rem;
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 900;
-    letter-spacing: -0.5px;
-    margin-top: -5px;
-}
-
-.tagline {
+.brand-subtitle {
     font-size: 0.7rem;
-    font-weight: 600;
-    color: #94a3b8;
-    margin-top: 4px;
-    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    color: #64748b;
+    letter-spacing: 2px;
+    margin-top: 2px;
     text-transform: uppercase;
-    opacity: 0.9;
-    position: relative;
-    left: 2px;
 }
 
-@keyframes truck-move {
+.speed-indicator {
+    display: flex;
+    gap: 3px;
+    margin-top: 4px;
+    align-items: center;
+}
+
+.speed-line {
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    border-radius: 1px;
+    animation: speedPulse 2s ease-in-out infinite;
+}
+
+.speed-line:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.speed-line:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes truckDrive {
     0%, 100% {
-        transform: translateX(0px) rotateY(0deg);
+        transform: translateX(0px);
     }
     25% {
-        transform: translateX(2px) rotateY(5deg);
+        transform: translateX(2px);
     }
     50% {
-        transform: translateX(4px) rotateY(0deg);
+        transform: translateX(4px);
     }
     75% {
-        transform: translateX(2px) rotateY(-5deg);
+        transform: translateX(2px);
+    }
+}
+
+@keyframes speedPulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scaleX(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
     }
 }
 
@@ -622,23 +633,29 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .logo-container {
-        padding: 8px 15px;
-        border-radius: 15px;
+    .logo-wrapper {
+        gap: 12px;
+        padding: 6px 12px;
+        border-radius: 40px;
     }
 
-    .logo-icon {
-        font-size: 2.2rem;
-        margin-right: 12px;
+    .truck-svg-icon {
+        width: 40px;
+        height: 24px;
     }
 
-    .logo-text-part-1,
-    .logo-text-part-2 {
-        font-size: 1.5rem;
+    .brand-name {
+        font-size: 1.3rem;
     }
 
-    .tagline {
-        font-size: 0.65rem;
+    .brand-subtitle {
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
+    }
+
+    .speed-line {
+        width: 10px;
+        height: 2px;
     }
 
     nav {
@@ -656,22 +673,28 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    .logo-container {
-        padding: 6px 12px;
-        border-radius: 12px;
+    .logo-wrapper {
+        gap: 10px;
+        padding: 4px 10px;
+        border-radius: 30px;
     }
 
-    .logo-icon {
-        font-size: 1.8rem;
-        margin-right: 10px;
+    .truck-svg-icon {
+        width: 35px;
+        height: 21px;
     }
 
-    .logo-text-part-1,
-    .logo-text-part-2 {
-        font-size: 1.2rem;
+    .brand-name {
+        font-size: 1.1rem;
     }
 
-    .tagline {
-        font-size: 0.6rem;
+    .brand-subtitle {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .speed-line {
+        width: 8px;
+        height: 1px;
     }
 }
