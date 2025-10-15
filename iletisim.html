@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - Fırat Nakliyat</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preload" href="css/contact.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/contact.css"></noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -88,15 +89,9 @@
                         <div class="map-container">
                             <h3><i class="fas fa-map-marked-alt"></i> Konum</h3>
                             <div class="google-map">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.7584586722847!2d28.97794831541842!3d41.01127797930123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd6570f4e1%3A0xe8c5c39dcd84b5!2zVGFrc2ltLCDEsXN0YW5idWw!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
-                                    width="100%" 
-                                    height="100%" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
+                                <div id="mapLazyPlaceholder" style="width:100%;height:100%;background:#f1f5f9;display:flex;align-items:center;justify-content:center;color:#475569;font-weight:600;border:0;">
+                                    Harita yükleniyor...
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -139,8 +134,8 @@
 
     <!-- Footer buraya components.js tarafından yüklenecek -->
 
-    <script src="js/components.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/contact-stats.js"></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/contact-stats.js" defer></script>
 </body>
 </html>

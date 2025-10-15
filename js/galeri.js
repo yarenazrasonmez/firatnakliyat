@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initGallerySlider();
     initKeyboardNavigation();
     initTouchSupport();
+    // Görselleri ekranda oldukça yükle
+    try { initLazyLoading(); } catch (e) {}
 });
 
 let currentSlide = 0;
@@ -88,7 +90,7 @@ function startAutoplay() {
     stopAutoplay();
     autoplayInterval = setInterval(() => {
         changeSlide(currentSlide + 1);
-    }, 2000); // 2 saniyede bir değiş
+    }, 3500); // 3.5 saniyede bir değiş (daha az CPU / daha akıcı)
 }
 
 function stopAutoplay() {
