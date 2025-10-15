@@ -11,39 +11,82 @@
     <nav>
       <div class="logo">
         <div class="logo-wrapper">
-          <!-- SVG Logo -->
-          <svg class="logo-svg" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-            <!-- Dış Yıldız -->
-            <g class="star-group">
-              <polygon class="star-outer" points="100,10 115,35 142,35 120,55 130,80 100,60 70,80 80,55 58,35 85,35" 
-                       fill="none" stroke="url(#starGradient)" stroke-width="2" stroke-linejoin="round"/>
-            </g>
-            
-            <!-- Hız Çizgileri (Yıldızın sağında) -->
-            <g class="speed-lines">
-              <line x1="145" y1="25" x2="165" y2="25" stroke="url(#speedGradient)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-              <line x1="150" y1="40" x2="170" y2="40" stroke="url(#speedGradient)" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
-              <line x1="145" y1="55" x2="165" y2="55" stroke="url(#speedGradient)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-            </g>
-
-            <!-- Gradientler -->
+          <!-- Karmann Ghia Tarzı Logo SVG -->
+          <svg class="retro-logo-svg" viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+              <!-- 3D Gölge Gradientleri -->
+              <linearGradient id="shadow1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#000000;stop-opacity:0.9" />
               </linearGradient>
-              <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+              
+              <linearGradient id="shadow2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#1e293b;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#0f172a;stop-opacity:0.7" />
+              </linearGradient>
+
+              <linearGradient id="shadow3" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#334155;stop-opacity:0.6" />
+                <stop offset="100%" style="stop-color:#1e293b;stop-opacity:0.5" />
+              </linearGradient>
+              
+              <!-- FIRAT Ana Gradient -->
+              <linearGradient id="firatGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                <stop offset="25%" style="stop-color:#e0f2fe;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#7dd3fc;stop-opacity:1" />
+                <stop offset="75%" style="stop-color:#0ea5e9;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0369a1;stop-opacity:1" />
+              </linearGradient>
+
+              <!-- Nakliyat İtalik Gradient -->
+              <linearGradient id="nakliyatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                <stop offset="30%" style="stop-color:#fed7aa;stop-opacity:1" />
+                <stop offset="70%" style="stop-color:#fb923c;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+              </linearGradient>
+
+              <!-- Alt Çizgi Gradient -->
+              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3" />
+                <stop offset="50%" style="stop-color:#f97316;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3" />
               </linearGradient>
             </defs>
-          </svg>
 
-          <!-- Metin -->
-          <div class="logo-text">
-            <h1 class="brand-name">FIRAT</h1>
-            <p class="brand-subtitle">NAKLIYAT</p>
-          </div>
+            <!-- FIRAT - 5 Katmanlı 3D Gölge -->
+            <text x="55" y="70" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" 
+                  fill="url(#shadow1)" letter-spacing="16" opacity="0.9">F__I__R__A__T</text>
+            <text x="54" y="69" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" 
+                  fill="url(#shadow1)" letter-spacing="16" opacity="0.85">F__I__R__A__T</text>
+            <text x="53" y="68" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" 
+                  fill="url(#shadow2)" letter-spacing="16" opacity="0.75">F__I__R__A__T</text>
+            <text x="52" y="67" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" 
+                  fill="url(#shadow2)" letter-spacing="16" opacity="0.65">F__I__R__A__T</text>
+            <text x="51" y="66" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" 
+                  fill="url(#shadow3)" letter-spacing="16" opacity="0.5">F__I__R__A__T</text>
+            
+            <!-- FIRAT Ana Yazı - Metalik Beyaz -->
+            <text x="50" y="65" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" 
+                  fill="url(#firatGradient)" stroke="#ffffff" stroke-width="2" letter-spacing="16">F__I__R__A__T</text>
+
+            <!-- Nakliyat İtalik - 4 Katmanlı 3D Gölge -->
+            <text x="84" y="115" font-family="Brush Script MT, Lucida Handwriting, cursive" font-size="48" 
+                  font-style="italic" font-weight="bold" fill="url(#shadow1)" letter-spacing="3" opacity="0.9">Nakliyat</text>
+            <text x="83" y="114" font-family="Brush Script MT, Lucida Handwriting, cursive" font-size="48" 
+                  font-style="italic" font-weight="bold" fill="url(#shadow2)" letter-spacing="3" opacity="0.75">Nakliyat</text>
+            <text x="82" y="113" font-family="Brush Script MT, Lucida Handwriting, cursive" font-size="48" 
+                  font-style="italic" font-weight="bold" fill="url(#shadow3)" letter-spacing="3" opacity="0.6">Nakliyat</text>
+            
+            <!-- Nakliyat Ana Yazı - Turuncu Metalik -->
+            <text x="81" y="112" font-family="Brush Script MT, Lucida Handwriting, cursive" font-size="48" 
+                  font-style="italic" font-weight="bold" fill="url(#nakliyatGradient)" stroke="#ffffff" 
+                  stroke-width="1.5" letter-spacing="3">Nakliyat</text>
+
+            <!-- Dekoratif Alt Çizgi -->
+            <line x1="55" y1="78" x2="440" y2="78" stroke="url(#lineGradient)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+          </svg>
         </div>
       </div>
 
