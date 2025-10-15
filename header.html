@@ -3,47 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fırat Nakliyat</title>
-  <link rel="stylesheet" href="header.css" />
+  <title>FIRAT Nakliyat</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">
         <div class="logo-wrapper">
+          <!-- SVG Logo -->
+          <svg class="logo-svg" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dış Yıldız -->
+            <g class="star-group">
+              <polygon class="star-outer" points="100,10 115,35 142,35 120,55 130,80 100,60 70,80 80,55 58,35 85,35" 
+                       fill="none" stroke="url(#starGradient)" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+            
+            <!-- Hız Çizgileri (Yıldızın sağında) -->
+            <g class="speed-lines">
+              <line x1="145" y1="25" x2="165" y2="25" stroke="url(#speedGradient)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+              <line x1="150" y1="40" x2="170" y2="40" stroke="url(#speedGradient)" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+              <line x1="145" y1="55" x2="165" y2="55" stroke="url(#speedGradient)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+            </g>
+
+            <!-- Gradientler -->
+            <defs>
+              <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Metin -->
           <div class="logo-text">
-            <h1
-              class="brand-name"
-              style="
-                /* Bu inline stiller, header.css'teki .brand-name'in üzerine yazabilir */
-                background: linear-gradient(90deg, #60a5fa, #2563eb);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                font-weight: 800;
-              "
-            >
-              FIRAT
-            </h1>
-            <p
-              class="brand-subtitle"
-              style="color: #f97316; font-weight: 700; letter-spacing: 2px"
-            >
-              NAKLİYAT
-            </p>
+            <h1 class="brand-name">FIRAT</h1>
+            <p class="brand-subtitle">NAKLIYAT</p>
           </div>
         </div>
       </div>
 
       <ul class="nav-links">
-        <li><a href="index.html" data-page="index" class="active">Anasayfa</a></li>
-        <li><a href="hakkimizda.html" data-page="hakkimizda">Hakkımızda</a></li>
-        <li><a href="hizmetlerimiz.html" data-page="hizmetlerimiz">Hizmetlerimiz</a></li>
-        <li><a href="galeri.html" data-page="galeri">Foto Galerisi</a></li>
-        <li><a href="iletisim.html" data-page="iletisim">İletişim</a></li>
+        <li><a href="index.html" data-page="index" class="nav-link">Anasayfa</a></li>
+        <li><a href="hakkimizda.html" data-page="hakkimizda" class="nav-link">Hakkımızda</a></li>
+        <li><a href="hizmetlerimiz.html" data-page="hizmetlerimiz" class="nav-link">Hizmetlerimiz</a></li>
+        <li><a href="galeri.html" data-page="galeri" class="nav-link">Foto Galerisi</a></li>
+        <li><a href="iletisim.html" data-page="iletisim" class="nav-link">İletişim</a></li>
       </ul>
     </nav>
   </header>
 
-  <script src="header.js"></script>
+  <!-- JS Dosyaları -->
+  <script src="main.js"></script>
+  <script src="components.js"></script>
 </body>
 </html>
