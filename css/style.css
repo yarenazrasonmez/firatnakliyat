@@ -45,14 +45,56 @@ nav {
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    animation: truck-move 2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.company-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.tagline {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+@keyframes truck-move {
+    0%, 100% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
 }
 
 .nav-links {
@@ -514,4 +556,36 @@ footer p {
 .scroll-to-top:hover {
     box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5) !important;
     transform: translateY(-3px) scale(1.1) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 2rem;
+    }
+
+    .company-name {
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 0.7rem;
+    }
+
+    nav {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
 }

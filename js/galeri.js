@@ -114,18 +114,13 @@ function adjustSliderHeight(slideIndex) {
     const activeImg = activeSlide.querySelector('img');
     
     if (activeImg && sliderWrapper) {
-        // Ekran boyutuna göre maksimum yükseklik ayarla
-        const isMobile = window.innerWidth <= 768;
-        const isTablet = window.innerWidth <= 1024;
-        const maxHeight = isMobile ? 600 : isTablet ? 700 : 800;
-        const minHeight = isMobile ? 250 : isTablet ? 300 : 400;
-        
-        // Eğer görsel yüklenmişse boyutunu ayarla
+        // Eğer görsel yüklenmişse container boyutunu ayarla
         if (activeImg.complete && activeImg.naturalHeight !== 0) {
             const aspectRatio = activeImg.naturalHeight / activeImg.naturalWidth;
             const containerWidth = sliderWrapper.offsetWidth;
-            let newHeight = Math.min(containerWidth * aspectRatio, maxHeight);
-            newHeight = Math.max(newHeight, minHeight);
+            const maxViewportHeight = window.innerHeight * 0.8; // Viewport'un %80'i
+            let newHeight = Math.min(containerWidth * aspectRatio, maxViewportHeight);
+            newHeight = Math.max(newHeight, 300); // Minimum 300px
             
             sliderWrapper.style.height = newHeight + 'px';
         } else {
@@ -133,8 +128,9 @@ function adjustSliderHeight(slideIndex) {
             activeImg.onload = function() {
                 const aspectRatio = this.naturalHeight / this.naturalWidth;
                 const containerWidth = sliderWrapper.offsetWidth;
-                let newHeight = Math.min(containerWidth * aspectRatio, maxHeight);
-                newHeight = Math.max(newHeight, minHeight);
+                const maxViewportHeight = window.innerHeight * 0.8;
+                let newHeight = Math.min(containerWidth * aspectRatio, maxViewportHeight);
+                newHeight = Math.max(newHeight, 300);
                 
                 sliderWrapper.style.height = newHeight + 'px';
             };
