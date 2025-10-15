@@ -697,89 +697,27 @@ footer p {
         width: 8px;
         height: 1px;
     }
-}
-/* === FIRAT NAKLIYAT LOGO YENİ STİL === */
+}/* FIRAT Nakliyat Logo ve Header Stilleri */
 
 .logo-svg {
-    width: 120px;
+    width: 160px;
     height: auto;
     display: block;
     flex-shrink: 0;
     z-index: 10;
     background: transparent;
-    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+    filter: drop-shadow(0 4px 8px rgba(96, 165, 250, 0.3));
     animation: logoFloat 3s ease-in-out infinite;
 }
 
-/* Yıldız Animasyonu */
-.star-group {
-    animation: starRotate 6s linear infinite;
-    transform-origin: 100px 45px;
-}
-
-.star-outer {
-    filter: drop-shadow(0 0 4px rgba(96, 165, 250, 0.6));
-}
-
-/* Hız Çizgileri Animasyonu */
-.speed-lines line:nth-child(1) {
-    animation: speedLineShoot 1.2s ease-in-out infinite;
-}
-
-.speed-lines line:nth-child(2) {
-    animation: speedLineShoot 1.2s ease-in-out infinite 0.3s;
-}
-
-.speed-lines line:nth-child(3) {
-    animation: speedLineShoot 1.2s ease-in-out infinite 0.6s;
-}
-
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-@keyframes starRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes speedLineShoot {
-    0% {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-}
-
-/* Logo Hover Efekti */
 .logo:hover .logo-svg {
-    filter: drop-shadow(0 8px 16px rgba(59, 130, 246, 0.6));
+    filter: drop-shadow(0 8px 16px rgba(96, 165, 250, 0.6));
 }
 
-.logo:hover .star-group {
-    animation-duration: 3s;
-}
-
-/* Logo Wrapper Ayarları */
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     padding: 8px 16px;
     border-radius: 50px;
     background: transparent !important;
@@ -800,7 +738,6 @@ footer p {
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Logo Text */
 .logo-text {
     display: flex;
     flex-direction: column;
@@ -812,15 +749,16 @@ footer p {
 .brand-name {
     font-size: 1.5rem !important;
     font-weight: 900 !important;
-    background: linear-gradient(90deg, #60a5fa, #2563eb) !important;
+    background: linear-gradient(90deg, #60a5fa, #1e40af) !important;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin: 0 !important;
     letter-spacing: -0.5px;
 }
 
 .brand-subtitle {
-    color: #f97316 !important;
+    color: #cbd5e1 !important;
     font-weight: 700 !important;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -828,15 +766,25 @@ footer p {
     font-size: 0.7rem;
 }
 
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .logo-svg {
-        width: 100px;
+        width: 130px;
     }
 
     .logo-wrapper {
-        gap: 10px;
+        gap: 12px;
         padding: 6px 12px;
+        border-radius: 40px;
     }
 
     .brand-name {
@@ -845,17 +793,19 @@ footer p {
 
     .brand-subtitle {
         font-size: 0.6rem;
+        letter-spacing: 1px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-svg {
-        width: 80px;
+        width: 100px;
     }
 
     .logo-wrapper {
-        gap: 8px;
+        gap: 10px;
         padding: 4px 10px;
+        border-radius: 30px;
     }
 
     .brand-name {
