@@ -7,70 +7,55 @@
     <link rel="stylesheet" href="header.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <div class="logo-wrapper">
-                    <svg class="logo-svg" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Arka yıldız şekli -->
-                        <defs>
-                            <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="truckGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
+<header>
+    <nav>
+        <div class="logo">
+            <div class="logo-wrapper">
+                <svg class="logo-svg" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="truckGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
 
-                        <!-- Yıldız -->
-                        <polygon points="45,10 55,35 82,35 62,55 72,80 45,60 18,80 28,55 8,35 35,35" 
-                                 fill="url(#starGrad)" stroke="#1d4ed8" stroke-width="0.5"/>
+                    <!-- Yıldız -->
+                    <polygon points="25,10 38,40 70,40 45,60 55,90 25,70 -5,90 5,60 -20,40 12,40"
+                             fill="url(#orangeGrad)" stroke="#fff" stroke-width="1"/>
 
-                        <!-- Kamyon gövdesi -->
-                        <rect x="95" y="25" width="50" height="30" rx="3" fill="url(#truckGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+                    <!-- Hız efekti -->
+                    <path d="M 25 50 Q 80 40 140 60" stroke="#f97316" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
 
-                        <!-- Kamyon cabin -->
-                        <rect x="150" y="28" width="22" height="24" rx="2" fill="url(#truckGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+                    <!-- Kamyon -->
+                    <rect x="145" y="38" width="50" height="28" rx="3" fill="url(#truckGrad)" />
+                    <rect x="195" y="40" width="22" height="24" rx="2" fill="url(#truckGrad)" />
+                    <rect x="200" y="45" width="10" height="8" rx="1" fill="#fff" opacity="0.3"/>
 
-                        <!-- Cabin penceresi -->
-                        <rect x="155" y="32" width="12" height="8" rx="1" fill="#3b82f6" opacity="0.3"/>
+                    <circle cx="165" cy="68" r="6" fill="#fff" />
+                    <circle cx="210" cy="68" r="6" fill="#fff" />
+                </svg>
 
-                        <!-- Arka tekerlek (büyük) -->
-                        <circle cx="115" cy="57" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                        <circle cx="115" cy="57" r="4.5" fill="#64748b"/>
-
-                        <!-- Ön tekerlek (büyük) -->
-                        <circle cx="160" cy="57" r="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                        <circle cx="160" cy="57" r="4.5" fill="#64748b"/>
-
-                        <!-- Hızlı hareket çizgileri -->
-                        <line x1="70" y1="35" x2="85" y2="35" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="75" y1="45" x2="88" y2="45" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-                        <line x1="72" y1="55" x2="83" y2="55" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-
-                        <!-- Yıldız vurgusu -->
-                        <path d="M 45 35 L 55 35" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
-                    </svg>
-
-                    <div class="logo-text">
-                        <h1 class="brand-name">FIRAT</h1>
-                        <p class="brand-subtitle">Nakliyat</p>
-                    </div>
+                <div class="logo-text">
+                    <h1 class="brand-name" style="color:#1e293b;">FIRAT</h1>
+                    <p class="brand-subtitle" style="color:#f97316;">NAKLİYAT</p>
                 </div>
             </div>
+        </div>
 
-            <ul class="nav-links">
-                <li><a href="index.html" data-page="index" class="active">Anasayfa</a></li>
-                <li><a href="hakkimizda.html" data-page="hakkimizda">Hakkımızda</a></li>
-                <li><a href="hizmetlerimiz.html" data-page="hizmetlerimiz">Hizmetlerimiz</a></li>
-                <li><a href="galeri.html" data-page="galeri">Foto Galerisi</a></li>
-                <li><a href="iletisim.html" data-page="iletisim">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="nav-links">
+            <li><a href="index.html" data-page="index" class="active">Anasayfa</a></li>
+            <li><a href="hakkimizda.html" data-page="hakkimizda">Hakkımızda</a></li>
+            <li><a href="hizmetlerimiz.html" data-page="hizmetlerimiz">Hizmetlerimiz</a></li>
+            <li><a href="galeri.html" data-page="galeri">Foto Galerisi</a></li>
+            <li><a href="iletisim.html" data-page="iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <script src="header.js"></script>
+<script src="header.js"></script>
 </body>
 </html>
