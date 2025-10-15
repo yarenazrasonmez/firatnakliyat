@@ -1,4 +1,4 @@
-// Header ve Footer Yükleyici - UTF-8 Desteği Eklenmiş
+// Header ve Footer Yükleyici
 
 document.addEventListener('DOMContentLoaded', function() {
     loadComponents();
@@ -12,26 +12,9 @@ async function loadComponents() {
 
 async function loadHeader() {
     try {
-        const response = await fetch('header.html', {
-            headers: {
-                'Content-Type': 'text/html; charset=UTF-8'
-            }
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
+        const response = await fetch('header.html');
         const headerHTML = await response.text();
-        
-        // Header'ı sayfaya ekle
-        const headerContainer = document.createElement('div');
-        headerContainer.innerHTML = headerHTML;
-        
-        // Body'nin en başına ekle
-        document.body.insertBefore(headerContainer.firstElementChild, document.body.firstChild);
-        
-        console.log('Header başarıyla yüklendi');
+        document.body.insertAdjacentHTML('afterbegin', headerHTML);
     } catch (error) {
         console.error('Header yüklenemedi:', error);
     }
@@ -39,26 +22,9 @@ async function loadHeader() {
 
 async function loadFooter() {
     try {
-        const response = await fetch('footer.html', {
-            headers: {
-                'Content-Type': 'text/html; charset=UTF-8'
-            }
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
+        const response = await fetch('footer.html');
         const footerHTML = await response.text();
-        
-        // Footer'ı sayfaya ekle
-        const footerContainer = document.createElement('div');
-        footerContainer.innerHTML = footerHTML;
-        
-        // Body'nin sonuna ekle
-        document.body.appendChild(footerContainer.firstElementChild);
-        
-        console.log('Footer başarıyla yüklendi');
+        document.body.insertAdjacentHTML('beforeend', footerHTML);
     } catch (error) {
         console.error('Footer yüklenemedi:', error);
     }
