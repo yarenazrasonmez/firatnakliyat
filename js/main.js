@@ -1,6 +1,9 @@
-// Ana JavaScript Dosyası - Genel İşlevler
+// Ana JavaScript Dosyası - Genel İşlevler + Logo Animasyonları
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Logo animasyonlarını başlat
+    initLogoAnimations();
+    
     // Navigasyon işlevleri
     initNavigation();
     
@@ -15,9 +18,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile menu
     initMobileMenu();
+    
+    // Scroll to top
+    addScrollToTop();
 });
 
-// Navigasyon İşlevleri
+// === LOGO ANIMASYONLARI ===
+function initLogoAnimations() {
+    const logoWrapper = document.querySelector('.logo-wrapper');
+    const starGroup = document.querySelector('.star-group');
+    const speedLines = document.querySelectorAll('.speed-lines line');
+
+    if (!logoWrapper) return;
+
+    // Logo'ya hover yapıldığında animasyon hızını artır
+    logoWrapper.addEventListener('mouseenter', function() {
+        if(starGroup) {
+            starGroup.style.animationDuration = '3s';
+        }
+        speedLines.forEach(line => {
+            line.style.animationDuration = '0.8s';
+        });
+    });
+
+    // Logo'dan hover çıkıldığında normal hıza dön
+    logoWrapper.addEventListener('mouseleave', function() {
+        if(starGroup) {
+            starGroup.style.animationDuration = '6s';
+        }
+        speedLines.forEach(line => {
+            line.style.animationDuration = '1.2s';
+        });
+    });
+
+    // Mobil cihazlarda daha iyi performans için animasyon iyileştirmesi
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if(isMobile && starGroup) {
+        starGroup.style.animationDuration = '8s';
+    }
+
+    console.log('✓ FIRAT NAKLIYAT Logo sistemi yüklendi');
+}
+
+// === NAVIGASYON İŞLEVLERİ ===
 function initNavigation() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -43,7 +86,7 @@ function initNavigation() {
     });
 }
 
-// Scroll Animasyonları
+// === SCROLL ANIMASYONLARI ===
 function initScrollAnimations() {
     const observerOptions = {
         root: null,
@@ -68,7 +111,7 @@ function initScrollAnimations() {
     });
 }
 
-// Smooth Scrolling
+// === SMOOTH SCROLLING ===
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -93,9 +136,8 @@ function initSmoothScrolling() {
     });
 }
 
-// Loading Animasyonları
+// === LOADING ANIMASYONLARI ===
 function initLoadingAnimations() {
-    // Sayfa yüklendiğinde fade-in efekti
     const body = document.body;
     body.style.opacity = '0';
     body.style.transition = 'opacity 0.5s ease';
@@ -118,11 +160,12 @@ function initLoadingAnimations() {
     });
 }
 
-// Mobile Menu
+// === MOBILE MENU ===
 function initMobileMenu() {
-    // Mobile menu button oluştur
     const nav = document.querySelector('nav');
     const navLinks = document.querySelector('.nav-links');
+    
+    if (!nav || !navLinks) return;
     
     if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-btn')) {
         const mobileMenuBtn = document.createElement('button');
@@ -177,22 +220,8 @@ function initMobileMenu() {
     });
 }
 
-// Utility Functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Scroll to top functionality
+// === SCROLL TO TOP ===
 function addScrollToTop() {
-    // Scroll to top button oluştur
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.innerHTML = '↑';
     scrollToTopBtn.classList.add('scroll-to-top');
@@ -203,7 +232,7 @@ function addScrollToTop() {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
         color: white;
         border: none;
         font-size: 1.2rem;
@@ -212,7 +241,7 @@ function addScrollToTop() {
         transform: translateY(100px);
         transition: all 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
     `;
     
     document.body.appendChild(scrollToTopBtn);
@@ -240,22 +269,31 @@ function addScrollToTop() {
     
     // Hover effects
     scrollToTopBtn.addEventListener('mouseenter', function() {
-        this.style.transform = this.style.transform + ' scale(1.1)';
-        this.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4)';
+        this.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.4)';
+        this.style.transform = 'translateY(0) scale(1.1)';
     });
     
     scrollToTopBtn.addEventListener('mouseleave', function() {
-        this.style.transform = this.style.transform.replace(' scale(1.1)', '');
-        this.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
+        this.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.3)';
+        if (window.pageYOffset > 300) {
+            this.style.transform = 'translateY(0)';
+        }
     });
 }
 
-// Initialize scroll to top after DOM content loaded
-document.addEventListener('DOMContentLoaded', function() {
-    addScrollToTop();
-});
+// === UTILITY FUNCTIONS ===
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
-// Loading states for buttons
 function showButtonLoading(button, loadingText = 'Yükleniyor...') {
     const originalText = button.textContent;
     button.textContent = loadingText;
@@ -269,23 +307,25 @@ function showButtonLoading(button, loadingText = 'Yükleniyor...') {
     };
 }
 
-// Error handling
+// === ERROR HANDLING ===
 window.addEventListener('error', function(e) {
     console.error('JavaScript Error:', e.error);
 });
 
-// Performance monitoring
+// === PERFORMANCE MONITORING ===
 window.addEventListener('load', function() {
-    const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
-    console.log('Page Load Time:', loadTime + 'ms');
-    
-    // If load time is too slow, show a message (optional)
-    if (loadTime > 3000) {
-        console.warn('Page loaded slowly. Consider optimizing resources.');
+    if (window.performance && window.performance.timing) {
+        const timing = window.performance.timing;
+        const loadTime = timing.loadEventEnd - timing.navigationStart;
+        console.log('Sayfa Yükleme Süresi:', loadTime + 'ms');
+        
+        if (loadTime > 3000) {
+            console.warn('Sayfa yavaş yüklendi. Kaynakları optimize etmeyi düşünün.');
+        }
     }
 });
 
-// Dark mode detection and handling
+// === DARK MODE HANDLING ===
 function handleDarkMode() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     
@@ -297,27 +337,25 @@ function handleDarkMode() {
         }
     }
     
-    // Initial check
     updateDarkMode(darkModeMediaQuery);
-    
-    // Listen for changes
     darkModeMediaQuery.addEventListener('change', updateDarkMode);
 }
 
-// Initialize dark mode handling
 document.addEventListener('DOMContentLoaded', function() {
     handleDarkMode();
 });
 
-// Export functions for use in other files
+// === EXPORT FOR TESTING ===
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         debounce,
-        showButtonLoading
+        showButtonLoading,
+        initScrollAnimations,
+        initSmoothScrolling
     };
 }
 
-// Global object for shared utilities
+// === GLOBAL UTILITIES ===
 window.WebSiteUtils = {
     debounce,
     showButtonLoading,
