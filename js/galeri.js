@@ -46,17 +46,35 @@ function initGallerySlider() {
     // Otomatik oynatma başlat
     startAutoplay();
 
+    // İlk görsel yüklendiğinde container boyutunu ayarla
+    const firstImg = slides[0]?.querySelector('img');
+    if (firstImg) {
+        if (firstImg.complete && firstImg.naturalHeight !== 0) {
+            adjustSliderHeight(0);
+        } else {
+            firstImg.onload = function() {
+                adjustSliderHeight(0);
+            };
+        }
+    }
+
     // Hover'da otomatik oynatmayı durdur
     const sliderWrapper = document.querySelector('.slider-wrapper');
     if (sliderWrapper) {
         sliderWrapper.addEventListener('mouseenter', stopAutoplay);
         sliderWrapper.addEventListener('mouseleave', startAutoplay);
     }
+
+    // Pencere boyutu değiştiğinde container boyutunu yeniden ayarla
+    window.addEventListener('resize', () => {
+        adjustSliderHeight(currentSlide);
+    });
 }
 
 function changeSlide(newIndex) {
     const slides = document.querySelectorAll('.gallery-slide');
     const indicators = document.querySelectorAll('.indicator');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
     
     if (newIndex < 0) {
         newIndex = slides.length - 1;
@@ -77,6 +95,9 @@ function changeSlide(newIndex) {
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
 
+    // Yeni görselin boyutuna göre container boyutunu ayarla
+    adjustSliderHeight(newIndex);
+
     // Transition tamamlandıktan sonra kilidi aç
     setTimeout(() => {
         isTransitioning = false;
@@ -84,6 +105,41 @@ function changeSlide(newIndex) {
 
     // Otomatik oynatmayı sıfırla
     restartAutoplay();
+}
+
+function adjustSliderHeight(slideIndex) {
+    const slides = document.querySelectorAll('.gallery-slide');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const activeSlide = slides[slideIndex];
+    const activeImg = activeSlide.querySelector('img');
+    
+    if (activeImg && sliderWrapper) {
+        // Ekran boyutuna göre maksimum yükseklik ayarla
+        const isMobile = window.innerWidth <= 768;
+        const isTablet = window.innerWidth <= 1024;
+        const maxHeight = isMobile ? 600 : isTablet ? 700 : 800;
+        const minHeight = isMobile ? 250 : isTablet ? 300 : 400;
+        
+        // Eğer görsel yüklenmişse boyutunu ayarla
+        if (activeImg.complete && activeImg.naturalHeight !== 0) {
+            const aspectRatio = activeImg.naturalHeight / activeImg.naturalWidth;
+            const containerWidth = sliderWrapper.offsetWidth;
+            let newHeight = Math.min(containerWidth * aspectRatio, maxHeight);
+            newHeight = Math.max(newHeight, minHeight);
+            
+            sliderWrapper.style.height = newHeight + 'px';
+        } else {
+            // Görsel henüz yüklenmemişse yüklenme olayını bekle
+            activeImg.onload = function() {
+                const aspectRatio = this.naturalHeight / this.naturalWidth;
+                const containerWidth = sliderWrapper.offsetWidth;
+                let newHeight = Math.min(containerWidth * aspectRatio, maxHeight);
+                newHeight = Math.max(newHeight, minHeight);
+                
+                sliderWrapper.style.height = newHeight + 'px';
+            };
+        }
+    }
 }
 
 function startAutoplay() {
