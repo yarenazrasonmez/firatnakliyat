@@ -44,7 +44,6 @@ nav {
     padding: 0 20px;
 }
 
-/* LOGO KISMI - DÜZELTİLMİŞ */
 .logo {
     display: flex;
     align-items: center;
@@ -82,9 +81,6 @@ nav {
     height: 30px;
     position: relative;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .truck-svg {
@@ -92,7 +88,6 @@ nav {
     height: 100%;
     animation: truckDrive 4s ease-in-out infinite;
     filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
-    display: block;
 }
 
 .logo-content {
@@ -100,32 +95,30 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    justify-content: center;
 }
 
 .brand-name {
     font-size: 1.6rem;
     font-weight: 900;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 .brand-subtitle {
     font-size: 0.7rem;
     font-weight: 700;
-    margin: 2px 0 0 0;
+    margin: 0;
     line-height: 1;
-    color: #94a3b8;
+    color: #64748b;
     letter-spacing: 2px;
+    margin-top: 2px;
     text-transform: uppercase;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 .speed-indicator {
@@ -489,42 +482,8 @@ footer p {
         display: flex;
     }
 
-    .logo-wrapper {
-        gap: 12px;
-        padding: 6px 12px;
-        border-radius: 40px;
-    }
-
-    .truck-svg-icon {
-        width: 40px;
-        height: 24px;
-    }
-
-    .brand-name {
-        font-size: 1.3rem;
-    }
-
-    .brand-subtitle {
-        font-size: 0.6rem;
-        letter-spacing: 1.5px;
-    }
-
-    .speed-line {
-        width: 10px;
-        height: 2px;
-    }
-
-    nav {
-        padding: 0 15px;
-    }
-
-    .nav-links {
-        gap: 1.5rem;
-    }
-
-    .nav-links a {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+    .logo {
+        font-size: 1.8rem;
     }
 
     h1 {
@@ -557,31 +516,6 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    .logo-wrapper {
-        gap: 10px;
-        padding: 4px 10px;
-        border-radius: 30px;
-    }
-
-    .truck-svg-icon {
-        width: 35px;
-        height: 21px;
-    }
-
-    .brand-name {
-        font-size: 1.1rem;
-    }
-
-    .brand-subtitle {
-        font-size: 0.55rem;
-        letter-spacing: 1px;
-    }
-
-    .speed-line {
-        width: 8px;
-        height: 1px;
-    }
-
     h1 {
         font-size: 2.2rem;
     }
@@ -695,4 +629,72 @@ footer p {
 .scroll-to-top:hover {
     box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5) !important;
     transform: translateY(-3px) scale(1.1) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-wrapper {
+        gap: 12px;
+        padding: 6px 12px;
+        border-radius: 40px;
+    }
+
+    .truck-svg-icon {
+        width: 40px;
+        height: 24px;
+    }
+
+    .brand-name {
+        font-size: 1.3rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
+    }
+
+    .speed-line {
+        width: 10px;
+        height: 2px;
+    }
+
+    nav {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-wrapper {
+        gap: 10px;
+        padding: 4px 10px;
+        border-radius: 30px;
+    }
+
+    .truck-svg-icon {
+        width: 35px;
+        height: 21px;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .speed-line {
+        width: 8px;
+        height: 1px;
+    }
 }
