@@ -618,7 +618,6 @@ footer p {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(30, 41, 59, 0.15);
 }
-
 /* Scroll to top button styling */
 .scroll-to-top {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
