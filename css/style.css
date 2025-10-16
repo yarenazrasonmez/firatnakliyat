@@ -697,21 +697,22 @@ footer p {
         width: 8px;
         height: 1px;
     }
-}/* FIRAT Nakliyat Logo Signature Style */
+}
+/* FIRAT Nakliyat Modern Logo Style */
 
 .logo-svg {
-    width: 300px;
+    width: 380px;
     height: auto;
     display: block;
     flex-shrink: 0;
     z-index: 10;
     background: transparent;
-    filter: drop-shadow(0 4px 8px rgba(96, 165, 250, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
     animation: logoFloat 3s ease-in-out infinite;
 }
 
 .logo:hover .logo-svg {
-    filter: drop-shadow(0 8px 16px rgba(96, 165, 250, 0.6));
+    filter: drop-shadow(0 8px 20px rgba(59, 130, 246, 0.6));
 }
 
 .logo {
@@ -726,10 +727,10 @@ footer p {
     display: flex;
     align-items: center;
     gap: 0;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 50px;
     background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -738,12 +739,12 @@ footer p {
 
 .logo:hover .logo-wrapper {
     transform: scale(1.05) translateY(-2px);
-    background: linear-gradient(145deg, rgba(59, 130, 246, 0.15), rgba(29, 78, 216, 0.1));
-    border-color: rgba(59, 130, 246, 0.3);
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.05));
+    border-color: rgba(59, 130, 246, 0.4);
     box-shadow: 
-        0 20px 60px rgba(59, 130, 246, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 20px 60px rgba(59, 130, 246, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 @keyframes logoFloat {
@@ -751,30 +752,38 @@ footer p {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-3px);
+        transform: translateY(-4px);
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Logo Styles */
+@media (max-width: 1024px) {
     .logo-svg {
-        width: 240px;
+        width: 340px;
     }
 
     .logo-wrapper {
-        gap: 0;
-        padding: 6px 12px;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-svg {
+        width: 280px;
+    }
+
+    .logo-wrapper {
+        padding: 6px 14px;
         border-radius: 40px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-svg {
-        width: 180px;
+        width: 220px;
     }
 
     .logo-wrapper {
-        gap: 0;
         padding: 4px 10px;
         border-radius: 30px;
     }
