@@ -701,7 +701,7 @@ footer p {
 /* FIRAT Nakliyat Modern Logo Style */
 
 .logo-svg {
-    width: 200px;
+    width: 200px;  /* 280px'den 200px'e düşürdüm */
     height: auto;
     display: block;
     flex-shrink: 0;
@@ -727,7 +727,7 @@ footer p {
     display: flex;
     align-items: center;
     gap: 0;
-    padding: 10px 20px;
+    padding: 8px 16px;  /* Padding'i de biraz küçülttüm */
     border-radius: 50px;
     background: transparent !important;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -759,28 +759,28 @@ footer p {
 /* Responsive Logo Styles */
 @media (max-width: 1024px) {
     .logo-svg {
-        width: 260px;
+        width: 180px;  /* 260px'den 180px'e düşürdüm */
     }
 
     .logo-wrapper {
-        padding: 8px 18px;
+        padding: 6px 14px;
     }
 }
 
 @media (max-width: 768px) {
     .logo-svg {
-        width: 220px;
+        width: 160px;  /* 220px'den 160px'e düşürdüm */
     }
 
     .logo-wrapper {
-        padding: 6px 14px;
+        padding: 5px 12px;
         border-radius: 40px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-svg {
-        width: 180px;
+        width: 140px;  /* 180px'den 140px'e düşürdüm */
     }
 
     .logo-wrapper {
